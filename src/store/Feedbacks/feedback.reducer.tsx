@@ -1,4 +1,4 @@
-import { AnyAction, Reducer } from "redux";
+import { Reducer } from "redux";
 import { FEEDBACK_TYPES } from "./feedback.types";
 import { FeedbackStateProps } from "../../utils/types";
 import { ActionFeedback } from "../../utils/types";
@@ -12,12 +12,10 @@ export const FEEDBACK_INTITIAL_STATE: FeedbackStateProps = {
   feedback: null,
 };
 
-
-export const FeedbackReducer : Reducer<FeedbackStateProps , ActionFeedback> = (
+export const FeedbackReducer: Reducer<FeedbackStateProps, ActionFeedback> = (
   state = FEEDBACK_INTITIAL_STATE,
   action: ActionFeedback
 ) => {
-
   switch (action.type) {
     case FEEDBACK_TYPES.GET_FEEDBACKS_START:
       return {
@@ -72,7 +70,9 @@ export const FeedbackReducer : Reducer<FeedbackStateProps , ActionFeedback> = (
       return {
         ...state,
         feedBacks: state.feedBacks.map((item) =>
-          item.id === action.payload.id ? { ...item, ...action.payload.data } : item
+          item.id === action.payload.id
+            ? { ...item, ...action.payload.data }
+            : item
         ),
         editale: false,
         feedback: null,

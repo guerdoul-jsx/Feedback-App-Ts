@@ -54,12 +54,11 @@ const FeedBackForm = () => {
     }
   }, [editale, feedback, dispatch]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     if (checkLength()) {
       setbtnDisabled(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rating]);
 
   const handleText = (e: ChangeEvent<HTMLInputElement>) => {
