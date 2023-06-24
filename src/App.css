@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.header-link:hover {
+  transform: scale(1.1);
+}

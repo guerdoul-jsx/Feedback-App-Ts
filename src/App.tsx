@@ -6,7 +6,7 @@ import FeedbackStats from "./components/FeedbackStats";
 import Header from "./components/Header";
 import About from "./components/pages/About";
 import Posts from "./components/pages/Posts";
-import { BrowserRouter as Router , Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
               <div>
                 <FeedBackForm />
                 <FeedbackStats />
-                <FeedBackList/>
+                <FeedBackList />
                 <AboutIconLink />
               </div>
             }
