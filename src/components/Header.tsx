@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../assets/images/icons8-stars-47.png";
 
 type HeaderPropTypes = {
   text?: string;
@@ -14,6 +15,7 @@ const Header: FC<HeaderPropTypes> = ({ text, color, bgColor }) => {
         <Link to="/" className="header-link">
           <h2>{text}</h2>
         </Link>
+        <img src={Logo} alt="Logo" />
         <Link to="/About" className="header-link">
           About
         </Link>
