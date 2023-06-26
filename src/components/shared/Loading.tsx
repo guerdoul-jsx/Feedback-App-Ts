@@ -4,13 +4,13 @@ import React from "react";
 const LoadingDot = {
   display: "block",
   width: "1.5rem",
-  height: "1,5rem",
+  height: "1.5rem",
   backgroundColor: "white",
   borderRadius: "50%",
 };
 
 const LoadingContainer = {
-  width: "10rem",
+  width: "8rem",
   height: "5rem",
   display: "flex",
   justifyContent: "space-around",
