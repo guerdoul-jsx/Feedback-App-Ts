@@ -1,86 +1,82 @@
-
 import { motion } from "framer-motion";
+import React from "react";
 
-const loading = {
-    display: 'flex',
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center'
-}
+const LoadingDot = {
+  display: "block",
+  width: "1.5rem",
+  height: "1,5rem",
+  backgroundColor: "white",
+  borderRadius: "50%",
+};
 
-const loadingContainer = {
-  width: "4rem",
-  height: "4rem",
+const LoadingContainer = {
+  width: "10rem",
+  height: "5rem",
   display: "flex",
   justifyContent: "space-around",
-  alignItems: 'center'
 };
 
-const loadingCircle = {
-  display: "block",
-  width: "1rem",
-  height: "1rem",
-  backgroundColor: "#ecf0f1",
-  borderRadius: "0.5rem",
-};
-
-const loadingContainerVariants = {
-  start: {
+const ContainerVariants = {
+  initial: {
     transition: {
       staggerChildren: 0.2,
     },
   },
-  end: {
+  animate: {
     transition: {
       staggerChildren: 0.2,
     },
   },
 };
 
-const loadingCircleVariants = {
-  start: {
+const DotVariants = {
+  initial: {
     y: "0%",
   },
-  end: {
-    y: "60%",
+  animate: {
+    y: "100%",
   },
 };
 
-const loadingCircleTransition = {
-  duration : 0.4,
-  yoyo : Infinity,
-  ease: 'easeInOut'
-}
-
-const Loading = () => {
-  return (
-    <div>
-        <div style={loading}>
-        <motion.div
-          style={loadingContainer}
-          variants={loadingContainerVariants}
-          initial="start"
-          animate="end"
-        >
-          <motion.span
-            style={loadingCircle}
-            variants={loadingCircleVariants}
-            transition={loadingCircleTransition}
-          ></motion.span>
-          <motion.span
-            style={loadingCircle}
-            variants={loadingCircleVariants}
-            transition={loadingCircleTransition}
-          ></motion.span>
-          <motion.span
-            style={loadingCircle}
-            variants={loadingCircleVariants}
-            transition={loadingCircleTransition}
-          ></motion.span>
-        </motion.div>
-        </div>
-    </div>
-  );
+const DotTransition = {
+  duration: 0.5,
+  yoyo: Infinity,
+  ease: "easeInOut",
 };
 
-export default Loading;
+export default function ThreeDotsWave() {
+  return (
+    <div
+      style={{
+        paddingTop: "5rem",
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <motion.div
+        style={LoadingContainer}
+        variants={ContainerVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <motion.span
+          style={LoadingDot}
+          variants={DotVariants}
+          transition={DotTransition}
+        />
+        <motion.span
+          style={LoadingDot}
+          variants={DotVariants}
+          transition={DotTransition}
+        />
+        <motion.span
+          style={LoadingDot}
+          variants={DotVariants}
+          transition={DotTransition}
+        />
+      </motion.div>
+    </div>
+  );
+}
